@@ -9,7 +9,7 @@
     <div class="row">
 <%--        <p>${user.name}</p>--%>
         <c:forEach items="${listing}" var="listing">
-            <a class="col-4 mt-2 main-game-card" href="${s:mvcUrl('AppHome#show').arg(0, model.slug).build()}">
+            <a class="col-4 mt-2 main-game-card" href="${s:mvcUrl('AppListing#show').arg(0, listing.slug).build()}">
                 <div class="game-card">
                     <div class="user-card-img">
                         <img alt="${listing.title}" src="${listing.image}">
