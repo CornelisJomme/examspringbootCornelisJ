@@ -4,10 +4,10 @@
 }
 
 .container-img img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 0.5em;
+    width: 320px;
+    height: 100%;
+    /*object-fit: revert;*/
+    border-radius: .85em;
 }
 
 .description ul {

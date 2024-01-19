@@ -1,7 +1,9 @@
 
 .main-game-card {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
+    margin-bottom: 70px;
+
 }
 
 .main-game-card:hover {

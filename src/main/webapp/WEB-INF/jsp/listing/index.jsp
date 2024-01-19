@@ -7,7 +7,7 @@
     <h1>Available listing</h1>
     <table class="table table-hover table-striped">
         <tbody>
-        <c:forEach items="${listing.content}" var="listing">
+        <c:forEach items="${listing}" var="listing">
             <tr>
                 <td>
                         ${listing.title}

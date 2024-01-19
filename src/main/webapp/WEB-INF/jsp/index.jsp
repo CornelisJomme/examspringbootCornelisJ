@@ -7,16 +7,14 @@
 
     <h2 class="my-5">Dernières annonces</h2>
     <div class="row">
-<%--        <p>${user.name}</p>--%>
         <c:forEach items="${listing}" var="listing">
             <a class="col-4 mt-2 main-game-card" href="${s:mvcUrl('AppListing#show').arg(0, listing.slug).build()}">
                 <div class="game-card">
-                    <div class="user-card-img">
+                    <div class="container-img img">
                         <img alt="${listing.title}" src="${listing.image}">
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <p>${listing.title}</p>
-                    </div>
+                    <p>${listing.model.name} </p>
+                    <p>${listing.price}￠ </p>
                 </div>
             </a>
         </c:forEach>
