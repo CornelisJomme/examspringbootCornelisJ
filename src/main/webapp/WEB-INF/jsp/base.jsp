@@ -16,11 +16,11 @@
         <script type="text/javascript" src="../../js/page/search-bar.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg bg-light">
             <div class="row w-100">
                 <div class="col-2">
                     <a class="navbar-brand ms-3" href="${s:mvcUrl('AppHome#index').build()}">
-                        <i class="fa-solid fa-franc-sign"></i>
+                        <i class="fa-solid fa-car-burst"></i>
                     </a>
                 </div>
                 <div class="col-2">
@@ -38,7 +38,7 @@
                         <div class="d-flex">
                             <input type="text"
                                    class="form-control"
-                                   placeholder="Auvergne, Pionsat, ..."
+                                   placeholder="Recherche"
                                    data-search-bar-games
                             >
                             <a class="my-auto me-3">

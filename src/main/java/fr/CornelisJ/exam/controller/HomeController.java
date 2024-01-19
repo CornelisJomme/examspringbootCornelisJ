@@ -1,7 +1,7 @@
 package fr.CornelisJ.exam.controller;
 
-import fr.CornelisJ.exam.service.CityService;
-import fr.CornelisJ.exam.service.RegionService;
+import fr.CornelisJ.exam.service.ListingService;
+import fr.CornelisJ.exam.service.ModelService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,12 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 @AllArgsConstructor
 public class HomeController {
 
-    private RegionService regionService;
+    private ListingService listingService;
 
     @GetMapping(name = "index")
     public ModelAndView index(ModelAndView mav) {
         mav.setViewName("index");
-        mav.addObject("region", regionService.findAll());
+        mav.addObject("listing", listingService.findAll());
         return mav;
     }
 

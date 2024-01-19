@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
@@ -14,25 +15,34 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class Region implements SluggerInterface {
+public class Listing implements SluggerInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
+    private Long model_id,user_id;
 
-    private String code;
+    private String title;
+
+    private String description;
+
+    private int  producedYear;
+
+    private Long mileage;
+
+    private Long price;
+
+    private Date createdAt;
+
+    private String image;
 
     private String slug;
-
-    @OneToMany(mappedBy = "region")
-    private List<Department> departments; // BDD => department_id
 
 
 
     @Override
     public String getField() {
-        return name;
+        return title;
     }
 }

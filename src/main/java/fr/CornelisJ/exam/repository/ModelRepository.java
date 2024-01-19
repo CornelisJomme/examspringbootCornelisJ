@@ -1,6 +1,6 @@
 package fr.CornelisJ.exam.repository;
 
-import fr.CornelisJ.exam.entity.Region;
+import fr.CornelisJ.exam.entity.Model;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface RegionRepository
-            extends JpaRepository<Region, Long>,
-                    EntityNameRepository<Region> {
+public interface ModelRepository
+            extends JpaRepository<Model, Long>,
+                    EntityNameRepository<Model> {
 
     // SELECT * FROM region WHERE price BETWEEN min AND max
 //    List<Region> findAllByPriceBetween(double min, double max);
@@ -18,10 +18,10 @@ public interface RegionRepository
 //    List<Region> findTop9ByOrderByPublishedAtDesc();
 
     // SELECT * FROM region WHERE name LIKE "%{name}%"
-    List<Region> findAllByNameIsContainingIgnoreCase(String name);
+    List<Model> findAllByNameIsContainingIgnoreCase(String name);
 
     // SELECT * FROM region WHERE name LIKE "{name}%"
-    List<Region> findAllByNameIsStartingWithIgnoreCase(String name);
+    List<Model> findAllByNameIsStartingWithIgnoreCase(String name);
 
     // SELECT * FROM region WHERE region.publisher_id = {p.id}
 //    List<Region> findAllByPublisher(Publisher p);
@@ -39,7 +39,7 @@ public interface RegionRepository
     // ORDER BY published_at DESC
 //    List<Region> findAllByCategoriesOrderByPublishedAtDesc(Category c);
 
-    Optional<Region> findBySlug(String slug);
+    Optional<Model> findBySlug(String slug);
 
 //    List<Region> findAllByNameIsContainingIgnoreCaseOrCategoriesNameIsContainingIgnoreCaseOrPlatformsNameIsContainingIgnoreCaseOrCountriesNameIsContainingIgnoreCaseOrderByPriceDesc(String s1, String s2, String s3, String s4);
 

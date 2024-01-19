@@ -1,6 +1,5 @@
 package fr.CornelisJ.exam.entity;
 
-import com.fasterxml.jackson.annotation.JsonView;
 import fr.CornelisJ.exam.entity.interfaces.SluggerInterface;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,38 +7,34 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
-public class City implements SluggerInterface {
+public class User implements SluggerInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    private String siren;
+    private Date createdAt;
 
-    private String name;
+    private String email;
 
-    private String code;
+    private String password;
 
-    private int population;
+    private String roles;
 
     private String slug;
 
-    @ManyToOne
-    private Department department; // BDD => department_id
 
 
 
     @Override
     public String getField() {
-        return name;
+        return email;
     }
 }

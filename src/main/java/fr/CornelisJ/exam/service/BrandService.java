@@ -1,8 +1,8 @@
 package fr.CornelisJ.exam.service;
 
-import fr.CornelisJ.exam.entity.Region;
+import fr.CornelisJ.exam.entity.Model;
 import fr.CornelisJ.exam.exception.NotFoundInstantFrancingException;
-import fr.CornelisJ.exam.repository.RegionRepository;
+import fr.CornelisJ.exam.repository.ModelRepository;
 import fr.CornelisJ.exam.utils.Slugger;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,29 +12,29 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class RegionService {
+public class BrandService {
 
-    private RegionRepository regionRepository;
+    private ModelRepository modelRepository;
     private Slugger slugger;
 
-    public List<Region> findAll() {
-        List<Region> regions = regionRepository.findAll();
+    public List<Model> findAll() {
+        List<Model> models = modelRepository.findAll();
         boolean hasFlush = false;
-        for (Region region : regions) {
-            if (region.getSlug() == null) {
-                region.setSlug(slugger.slugify(region.getName()));
+        for (Model model : models) {
+            if (model.getSlug() == null) {
+                model.setSlug(slugger.slugify(model.getName()));
                 hasFlush = true;
             }
         }
         if (hasFlush) {
-            regionRepository.flush();
+            modelRepository.flush();
         }
-        return regions;
+        return models;
     }
 
 
-    public Region findBySlug(String slug) {
-        Optional<Region> optionalRegion = regionRepository.findBySlug(slug);
+    public Model findBySlug(String slug) {
+        Optional<Model> optionalRegion = modelRepository.findBySlug(slug);
         if (optionalRegion.isEmpty()) {
             throw new NotFoundInstantFrancingException("Region", "slug", slug);
         }
@@ -49,8 +49,8 @@ public class RegionService {
 //        return regionRepository.findAllByCategoriesSlugOrderByPublishedAtDesc(slug);
 //    }
 
-    public Region getObjectById(Long id) {
-        Optional<Region> optionalRegion = regionRepository.findById(id);
+    public Model getObjectById(Long id) {
+        Optional<Model> optionalRegion = modelRepository.findById(id);
         if (optionalRegion.isEmpty()) {
             throw new NotFoundInstantFrancingException("Region", "id", id);
         }

@@ -1,9 +1,9 @@
 
 * {
-    --bs-body-bg: #272727;
-    --bs-body-color: #fff;
-    --bs-secondary: #323232;
-    --bs-primary: #ff5400;
+    --bs-body-bg: #d6dbec;
+    --bs-body-color: #090909;
+    --bs-secondary: #918a8a;
+    --bs-primary: #5e00ff;
 }
 
 .btn-primary {

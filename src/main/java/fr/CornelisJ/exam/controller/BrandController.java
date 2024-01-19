@@ -1,8 +1,7 @@
 package fr.CornelisJ.exam.controller;
 
-import fr.CornelisJ.exam.dto.CityDTO;
-import fr.CornelisJ.exam.entity.City;
-import fr.CornelisJ.exam.service.CityService;
+import fr.CornelisJ.exam.entity.Model;
+import fr.CornelisJ.exam.service.ModelService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,21 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(path = "/city", name = "AppCity")
+@RequestMapping(path = "/region", name = "AppRegion")
 @AllArgsConstructor
-public class CityController {
+public class BrandController {
 
-    private final CityService cityService;
+    private final ModelService modelService;
 
     @GetMapping(path = "/{slug}", name = "show")
     public ModelAndView show(@PathVariable String slug, ModelAndView mav) {
-        City city = cityService.findBySlug(slug);
+        Model model = modelService.findBySlug(slug);
         // Initialisation du ReviewDTO
-//        CityDTO dto = new CityDTO();
-//        dto.setCityId(city.getId());
+//        RegionDTO dto = new RegionDTO();
+//        dto.setRegionId(region.getId());
 //        dto.setUserId(1L);
-        mav.setViewName("city/show");
-        mav.addObject("city", city);
+        mav.setViewName("region/show");
+        mav.addObject("region", model);
 //        mav.addObject("reviewDto", dto);
         return mav;
     }
@@ -33,7 +32,7 @@ public class CityController {
 //    @GetMapping(path = "/search/{searched}", name = "search")
 //    public ModelAndView search(@PathVariable String searched, ModelAndView mav) {
 //        mav.setViewName("index");
-//        mav.addObject("citiesReleased", cityService.findAllBySearchedValue(searched));
+//        mav.addObject("citiesReleased", regionService.findAllBySearchedValue(searched));
 //        return mav;
 //    }
 

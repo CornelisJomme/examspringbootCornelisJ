@@ -1,6 +1,6 @@
 package fr.CornelisJ.exam.repository;
 
-import fr.CornelisJ.exam.entity.City;
+import fr.CornelisJ.exam.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface CityRepository
-            extends JpaRepository<City, Long>,
-                    EntityNameRepository<City> {
+public interface UserRepository
+            extends JpaRepository<User, Long>,
+                    EntityNameRepository<User> {
 
     // SELECT * FROM city WHERE price BETWEEN min AND max
 //    List<City> findAllByPriceBetween(double min, double max);
@@ -18,10 +18,10 @@ public interface CityRepository
 //    List<City> findTop9ByOrderByPublishedAtDesc();
 
     // SELECT * FROM city WHERE name LIKE "%{name}%"
-    List<City> findAllByNameIsContainingIgnoreCase(String name);
-
-    // SELECT * FROM city WHERE name LIKE "{name}%"
-    List<City> findAllByNameIsStartingWithIgnoreCase(String name);
+//    List<User> findAllByNameIsContainingIgnoreCase(String name);
+//
+//    // SELECT * FROM city WHERE name LIKE "{name}%"
+//    List<User> findAllByNameIsStartingWithIgnoreCase(String name);
 
     // SELECT * FROM city WHERE city.publisher_id = {p.id}
 //    List<City> findAllByPublisher(Publisher p);
@@ -39,7 +39,7 @@ public interface CityRepository
     // ORDER BY published_at DESC
 //    List<City> findAllByCategoriesOrderByPublishedAtDesc(Category c);
 
-    Optional<City> findBySlug(String slug);
+//    Optional<User> findBySlug(String slug);
 
 //    List<City> findAllByNameIsContainingIgnoreCaseOrCategoriesNameIsContainingIgnoreCaseOrPlatformsNameIsContainingIgnoreCaseOrCountriesNameIsContainingIgnoreCaseOrderByPriceDesc(String s1, String s2, String s3, String s4);
 
