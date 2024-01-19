@@ -41,9 +41,9 @@ public class ListingService {
         return optionalListing.get();
     }
 
-//    public List<Listing> findTop9ByOrderByPublishedAtDesc() {
-//        return listingRepository.findTop9ByOrderByPublishedAtDesc();
-//    }
+    public List<Listing> findTop12ByOrderByCreatedAtDesc() {
+        return listingRepository.findTop12ByOrderByCreatedAtDesc();
+    }
 
 //    public List<Listing> findByCategory(String slug) {
 //        return listingRepository.findAllByCategoriesSlugOrderByPublishedAtDesc(slug);
@@ -57,7 +57,4 @@ public class ListingService {
         return optionalListing.get();
     }
 
-//    public List<Listing> findAllBySearchedValue(String search) {
-//        return listingRepository.findAllByNameIsContainingIgnoreCaseOrCategoriesNameIsContainingIgnoreCaseOrPlatformsNameIsContainingIgnoreCaseOrCountriesNameIsContainingIgnoreCaseOrderByPriceDesc(search, search, search, search);
-//    }
 }

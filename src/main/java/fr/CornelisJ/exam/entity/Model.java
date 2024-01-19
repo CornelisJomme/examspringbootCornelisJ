@@ -19,13 +19,13 @@ public class Model implements SluggerInterface {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long brand_id;
 
     private String name;
 
     private String slug;
 
-
+    @ManyToOne
+    private Brand brand;
 
 
     @Override

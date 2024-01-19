@@ -15,7 +15,7 @@ public interface ListingRepository
     // SELECT * FROM department WHERE price BETWEEN min AND max
 //    List<Department> findAllByPriceBetween(double min, double max);
 
-//    List<Department> findTop9ByOrderByPublishedAtDesc();
+    List<Listing> findTop12ByOrderByCreatedAtDesc();
 
     // SELECT * FROM department WHERE name LIKE "%{name}%"
     List<Listing> findAllByTitleIsContainingIgnoreCase(String title);

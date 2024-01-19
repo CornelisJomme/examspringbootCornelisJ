@@ -29,7 +29,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link" href="${s:mvcUrl('AppHome#index').build()}">Platform</a>
+                            <a class="nav-link" href="${s:mvcUrl('AppListing#index').build()}">Listing</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                </div>
+                <div class="col-4"></div>
             </div>
         </nav>

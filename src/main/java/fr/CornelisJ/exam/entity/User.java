@@ -31,8 +31,8 @@ public class User implements SluggerInterface {
 
     private String slug;
 
-    @OneToMany(mappedBy = "department")
-    private List<Listing> listing;
+    @OneToMany(mappedBy = "user")
+    private List<Listing> listings;
 
 
     @Override

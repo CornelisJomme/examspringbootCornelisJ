@@ -18,7 +18,7 @@ public class HomeController {
     @GetMapping(name = "index")
     public ModelAndView index(ModelAndView mav) {
         mav.setViewName("index");
-        mav.addObject("listing", listingService.findAll());
+        mav.addObject("listing", listingService.findTop12ByOrderByCreatedAtDesc());
         return mav;
     }
 

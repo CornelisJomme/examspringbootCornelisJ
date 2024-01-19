@@ -11,10 +11,19 @@
         <div class="col-6">
             <h1>${listing.title}</h1>
             <div class="d-flex">
+                <c:forEach items="${listing}" var="listing">
+                    <a class="link-if" href="${s:mvcUrl('AppListing#search').arg(0, listing.name.toLowerCase()).build()}">
+                        <img class="me-1"
+                             src="${listing.image}"
+                             alt="${listing.model}"
+                             title="${listing.title}"
+                        >
+                    </a>
+                </c:forEach>
             </div>
             <p class="m-0 mt-1"> :
             </p>
-            <p class="fs-2">${listing.} gens</p>
+            <p class="fs-2">${listing.createdAt} gens</p>
         </div>
     </div>
 

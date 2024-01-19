@@ -21,8 +21,6 @@ public class Listing implements SluggerInterface {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Long model_id,user_id;
-
     private String title;
 
     private String description;
@@ -41,6 +39,10 @@ public class Listing implements SluggerInterface {
 
     @ManyToOne
     private User user;
+
+    @ManyToOne
+    private Model model;
+
 
     @Override
     public String getField() {
