@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +31,8 @@ public class User implements SluggerInterface {
 
     private String slug;
 
-
+    @OneToMany(mappedBy = "department")
+    private List<Listing> listing;
 
 
     @Override

@@ -39,7 +39,8 @@ public class Listing implements SluggerInterface {
 
     private String slug;
 
-
+    @ManyToOne
+    private User user;
 
     @Override
     public String getField() {
