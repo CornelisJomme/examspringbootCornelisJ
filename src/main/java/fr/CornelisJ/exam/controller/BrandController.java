@@ -23,7 +23,7 @@ public class BrandController {
 //        RegionDTO dto = new RegionDTO();
 //        dto.setRegionId(region.getId());
 //        dto.setUserId(1L);
-        mav.setViewName("region/show");
+        mav.setViewName("brand/show");
         mav.addObject("region", model);
 //        mav.addObject("reviewDto", dto);
         return mav;

@@ -12,15 +12,16 @@
             <h1>${listing.title}</h1>
             <div class="d-flex">
             </div>
-            <p class="m-0 mt-1">Population :
+            <p class="m-0 mt-1"> :
             </p>
-            <p class="fs-2">${listing.population} gens</p>
+            <p class="fs-2">${listing.} gens</p>
         </div>
     </div>
 
     <h2 class="my-5">Description</h2>
 
     <div class="text-center description">
+        <h1>${listing.description}</h1>
     </div>
 
 
