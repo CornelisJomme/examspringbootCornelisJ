@@ -24,20 +24,14 @@ public class ListingController {
         return mav;
     }
 
-    @GetMapping(path = "/{slug}", name = "show")
-    public ModelAndView show(@PathVariable String slug, ModelAndView mav) {
-        Listing listing = listingService.findBySlug(slug);
+    @GetMapping(path = "/{id}", name = "show")
+    public ModelAndView show(@PathVariable Long id, ModelAndView mav) {
+        Listing listing = listingService.findByID(id);
         mav.setViewName("listing/show");
         mav.addObject("listing", listing);
         mav.addObject("listing/index", listing);
         return mav;
     }
 
-//    @GetMapping(path = "/search/{searched}", name = "search")
-//    public ModelAndView search(@PathVariable String searched, ModelAndView mav) {
-//        mav.setViewName("index");
-//        mav.addObject("citiesReleased", regionService.findAllBySearchedValue(searched));
-//        return mav;
-//    }
 
 }

@@ -41,14 +41,6 @@ public class ModelService {
         return optionalModel.get();
     }
 
-//    public List<Model> findTop9ByOrderByPublishedAtDesc() {
-//        return modelRepository.findTop9ByOrderByPublishedAtDesc();
-//    }
-
-//    public List<Model> findByCategory(String slug) {
-//        return modelRepository.findAllByCategoriesSlugOrderByPublishedAtDesc(slug);
-//    }
-
     public Model getObjectById(Long id) {
         Optional<Model> optionalModel = modelRepository.findById(id);
         if (optionalModel.isEmpty()) {
@@ -56,8 +48,4 @@ public class ModelService {
         }
         return optionalModel.get();
     }
-
-//    public List<Model> findAllBySearchedValue(String search) {
-//        return modelRepository.findAllByNameIsContainingIgnoreCaseOrCategoriesNameIsContainingIgnoreCaseOrPlatformsNameIsContainingIgnoreCaseOrCountriesNameIsContainingIgnoreCaseOrderByPriceDesc(search, search, search, search);
-//    }
 }

@@ -12,35 +12,11 @@ public interface ModelRepository
             extends JpaRepository<Model, Long>,
                     EntityNameRepository<Model> {
 
-    // SELECT * FROM region WHERE price BETWEEN min AND max
-//    List<Region> findAllByPriceBetween(double min, double max);
 
-//    List<Region> findTop9ByOrderByPublishedAtDesc();
-
-    // SELECT * FROM region WHERE name LIKE "%{name}%"
     List<Model> findAllByNameIsContainingIgnoreCase(String name);
 
-    // SELECT * FROM region WHERE name LIKE "{name}%"
     List<Model> findAllByNameIsStartingWithIgnoreCase(String name);
 
-    // SELECT * FROM region WHERE region.publisher_id = {p.id}
-//    List<Region> findAllByPublisher(Publisher p);
-
-    // SELECT * FROM region g
-    // JOIN region_category gc ON g.id = gc.region_id
-    // JOIN category c ON c.id = gc.category_id
-    // WHERE c.slug = {slug}
-    // ORDER BY published_at DESC
-//    List<Region> findAllByCategoriesSlugOrderByPublishedAtDesc(String slug);
-
-    // SELECT * FROM region g
-    // JOIN region_category gc ON g.id = gc.region_id
-    // WHERE gc.category_id = {c.id}
-    // ORDER BY published_at DESC
-//    List<Region> findAllByCategoriesOrderByPublishedAtDesc(Category c);
 
     Optional<Model> findBySlug(String slug);
-
-//    List<Region> findAllByNameIsContainingIgnoreCaseOrCategoriesNameIsContainingIgnoreCaseOrPlatformsNameIsContainingIgnoreCaseOrCountriesNameIsContainingIgnoreCaseOrderByPriceDesc(String s1, String s2, String s3, String s4);
-
 }

@@ -40,14 +40,18 @@ public class ListingService {
         }
         return optionalListing.get();
     }
+    public Listing findByID(Long id) {
+        Optional<Listing> optionalListing = listingRepository.findById(id);
+        if (optionalListing.isEmpty()) {
+            throw new NotFoundInstantFrancingException("Listing", "id", id);
+        }
+        return optionalListing.get();
+    }
 
     public List<Listing> findTop12ByOrderByCreatedAtDesc() {
         return listingRepository.findTop12ByOrderByCreatedAtDesc();
     }
 
-//    public List<Listing> findByCategory(String slug) {
-//        return listingRepository.findAllByCategoriesSlugOrderByPublishedAtDesc(slug);
-//    }
 
     public Listing getObjectById(Long id) {
         Optional<Listing> optionalListing = listingRepository.findById(id);

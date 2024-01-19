@@ -19,21 +19,9 @@ public class ModelController {
     @GetMapping(path = "/{slug}", name = "show")
     public ModelAndView show(@PathVariable String slug, ModelAndView mav) {
         Model model = modelService.findBySlug(slug);
-        // Initialisation du ReviewDTO
-//        ModelDTO dto = new ModelDTO();
-//        dto.setModelId(model.getId());
-//        dto.setUserId(1L);
         mav.setViewName("model/show");
         mav.addObject("model", model);
-//        mav.addObject("reviewDto", dto);
         return mav;
     }
-
-//    @GetMapping(path = "/search/{searched}", name = "search")
-//    public ModelAndView search(@PathVariable String searched, ModelAndView mav) {
-//        mav.setViewName("index");
-//        mav.addObject("citiesReleased", modelService.findAllBySearchedValue(searched));
-//        return mav;
-//    }
 
 }

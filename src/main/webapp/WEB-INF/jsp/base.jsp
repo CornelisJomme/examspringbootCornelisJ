@@ -28,9 +28,9 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-link" href="${s:mvcUrl('AppListing#index').build()}">Listing</a>
-                        </div>
+<%--                        <div class="navbar-nav">--%>
+<%--                            <a class="nav-link" href="${s:mvcUrl('AppListing#index').build()}">Listing</a>--%>
+<%--                        </div>--%>
                     </div>
                 </div>
                 <div class="col-4">
@@ -40,9 +40,10 @@
                                    class="form-control"
                                    placeholder="Recherche"
                                    data-search-bar-games
+                                   style="width: 2500%;"
                             >
-                            <a class="my-auto me-3">
-                                <i class="fa fa-magnifying-glass"></i>
+                            <a class="my-auto me-3 text-lg-end">
+                                <img class="game-card-ico" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e8ddc4da-23dd-4502-b65b-378c9cfe5efa/dfgb852-b674c834-db71-49ae-9fb7-61e04ac1a9ad.png/v1/fill/w_1280,h_1280/black_pokeball_by_jormxdos_dfgb852-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2U4ZGRjNGRhLTIzZGQtNDUwMi1iNjViLTM3OGM5Y2ZlNWVmYVwvZGZnYjg1Mi1iNjc0YzgzNC1kYjcxLTQ5YWUtOWZiNy02MWUwNGFjMWE5YWQucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.JpYIlqmj61yLZJOxs9WVmn0qwLkJKH_icHUW6AnTFU8"></img>
                             </a>
                         </div>
                         <div class="search-response-container">
